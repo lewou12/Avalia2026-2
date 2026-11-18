@@ -14,6 +14,10 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   X-DNS-Prefetch-Control: off
+  Access-Control-Allow-Origin: https://p26-2a-b560-8204-9850-c4b0.pages.dev
+  Vary: Origin
+
+/
   Cache-Control: public, max-age=0, must-revalidate
 
 /index.html
