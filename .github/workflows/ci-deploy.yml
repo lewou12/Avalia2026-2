@@ -56,8 +56,10 @@ jobs:
 
       - name: Run test suite
         run: |
-          if [ -d tests ]; then
-            node --test tests/
+          # Expansão explícita dos arquivos: `node --test <dir>` falha em
+          # algumas versões do Node (MODULE_NOT_FOUND ao resolver o diretório).
+          if compgen -G "tests/*.test.mjs" > /dev/null; then
+            node --test tests/*.test.mjs
           else
             echo "sem testes"
           fi
